@@ -1,0 +1,60 @@
+<div id="modules" style="position: relative; z-index: 1; padding: 5px; padding-bottom: 5px;">
+    <canvas id="backgroundCanvas"></canvas>
+    <div>
+        <h2 class="module-head">Our Modules</h2>
+    </div>
+    <div class="modules-container">
+        <div class="module-card" onclick="toggleContent(this)">
+            <img src="sales.png" alt="Sales">
+            <div class="module-name">Sales</div>
+            <p class="module-description">Manage and track sales performance.</p>
+        </div>
+        <div class="module-card" onclick="toggleContent(this)">
+            <img src="inventory.png" alt="Inventory">
+            <div class="module-name">Stock and Inventory</div>
+            <p class="module-description">Monitor stock levels and inventory flow.</p>
+        </div>
+        <div class="module-card" onclick="toggleContent(this)">
+            <img src="accounting.png" alt="Accounting">
+            <div class="module-name">Accounting</div>
+            <p class="module-description">Handle financial transactions and reporting.</p>
+        </div>
+        <div class="module-card" onclick="toggleContent(this)">
+            <img src="quality.png" alt="Quality Management">
+            <div class="module-name">Quality Management</div>
+            <p class="module-description">Ensure product quality and manufacturing standards.</p>
+        </div>
+        <div class="module-card" onclick="toggleContent(this)">
+            <img src="crm.png" alt="CRM">
+            <div class="module-name">CRM</div>
+            <p class="module-description">Manage customer relationships and interactions.</p>
+        </div>
+        <div class="module-card" onclick="toggleContent(this)">
+            <img src="hr.png" alt="HR">
+            <div class="module-name">HR & Payroll</div>
+            <p class="module-description">Oversee payroll, leave, and employee management.</p>
+        </div>
+        <div class="module-card" onclick="toggleContent(this)">
+            <img src="project.png" alt="Project Supervision">
+            <div class="module-name">Project Supervision</div>
+            <p class="module-description">Supervise projects and coordinate tasks.</p>
+        </div>
+    </div>
+
+    <!-- Add Modal Overlay Here -->
+    <div id="moduleModal">
+        <div class="modal-content">
+            <!-- Header Section -->
+            <div class="modal-header">
+                <span class="close-btn" onclick="closeModal()">&times;</span>
+                <h2 id="modalTitle"></h2>
+            </div>
+            
+            <!-- Content Section -->
+            <div class="modal-body">
+                <p id="modalDescription"></p>
+            </div>
+        </div>
+    </div>
+    
+</div>
