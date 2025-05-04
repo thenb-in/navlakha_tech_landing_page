@@ -89,22 +89,25 @@ const modalTitle = document.getElementById("modalTitle");
 const modalDescription = document.getElementById("modalDescription");
 
 moduleCards.forEach((card) => {
-    const img = card.querySelector("img");
+    const img = card.querySelector("img"); // This will be null now, but keeping variable names for simplicity
+    const icon = card.querySelector(".module-icon"); // Get icon element
     const description = card.querySelector(".module-description");
+    const details = card.dataset.details; // Get detailed description from data-details attribute
 
     card.addEventListener("mouseenter", function () {
-        img.style.opacity = "0"; // Hide Image
-        description.style.display = "block"; // Show Description
+        // img.style.opacity = "0"; // No longer needed
+        description.style.opacity = "1"; // Show Description by changing opacity
     });
 
     card.addEventListener("mouseleave", function () {
-        img.style.opacity = "1"; // Show Image
-        description.style.display = "none"; // Hide Description
+        // img.style.opacity = "1"; // No longer needed
+        description.style.opacity = "0"; // Hide Description by changing opacity
     });
 
     card.addEventListener("click", function () {
         modalTitle.innerText = card.querySelector(".module-name").innerText;
-        modalDescription.innerText = card.querySelector(".module-description").innerText + " - Detailed view with more information about this module.";
+        // modalDescription.innerText = card.querySelector(".module-description").innerText + " - Detailed view with more information about this module."; // Old way
+        modalDescription.innerText = details; // Use the detailed description from data-details
         modal.style.display = "flex";
     });
 });
