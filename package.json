@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
+    "build": "npm render.js",
     "start": "node ./bin/www",
     "dev": "nodemon node ./bin/www"
   },
