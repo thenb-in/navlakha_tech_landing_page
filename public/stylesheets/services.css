@@ -33,7 +33,7 @@
     border-radius: 10px;
   }
   
-  /* Features List */
+  /* Features List -> Services List -> Features List */
   .features-list {
     display: flex;
     flex-wrap: wrap;
@@ -43,7 +43,7 @@
     list-style: none;
   }
   
-  /* Features Card */
+  /* Features Card -> Service Card -> Features Card */
   .features-card {
     background: linear-gradient(135deg, #ffffff, #f9f9ff);
     padding: 30px;
@@ -61,7 +61,7 @@
   .features-card:hover {
     transform: translateY(-8px) scale(1.02);
     box-shadow: 0px 12px 25px rgba(0, 0, 0, 0.15);
-    background: linear-gradient(135deg, #004658, #004658);
+    background: linear-gradient(135deg, #004658, #005f73);
   }
   
   .features-card:hover .title,
@@ -71,12 +71,13 @@
   
   .features-card:hover .icon {
     background: rgba(255, 255, 255, 0.2);
+    color: #ffffff;
   }
   
   /* Icon Style */
   .features-card .icon {
-    background: linear-gradient(135deg, #004658, #ff7eb3);
-    color: var(--white);
+    background: linear-gradient(135deg, #e0f7fa, #b2ebf2);
+    color: var(--st-patricks-blue);
     min-width: 60px;
     height: 60px;
     font-size: 12px;
@@ -103,7 +104,7 @@
     transition: color 0.3s ease-in-out;
   }
   
-  /* Features Banner */
+  /* Features Banner -> Restore */
   .features-banner {
     display: flex;
     justify-content: center;
@@ -121,7 +122,6 @@
   /* Responsive Design */
   @media (max-width: 768px) {
     .feature-middle{
-        
         flex-direction: column;
     }
 
@@ -146,10 +146,12 @@
       transform: translateY(0);
     }
   }
-  
+
+  /* feature-middle -> Restore */
   .feature-middle{
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-block: 30px;
   }
