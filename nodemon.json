@@ -1,0 +1,15 @@
+{
+  "watch": [
+    "**/*",
+    "!public/**/*"
+  ],
+  "ext": "js,json,ejs,html,css",
+  "ignore": [
+    "public/**/*",
+    "node_modules/**/*"
+  ],
+  "execMap": {
+    "js": "node"
+  },
+  "verbose": true
+}
