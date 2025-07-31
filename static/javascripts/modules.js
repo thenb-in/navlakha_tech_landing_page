@@ -1,127 +1,27 @@
-// function toggleContent(card) {
-//     let img = card.querySelector("img");
-//     let text = card.querySelector("p");
+document.addEventListener('DOMContentLoaded', () => {
+    const moduleCards = document.querySelectorAll('.module-card');
+    const overlay = document.getElementById('moduleOverlay');
+    const closeOverlayBtn = document.getElementById('closeOverlay');
+    const overlayDetailsContainer = document.getElementById('overlayDetails');
 
-//     if (img.style.display !== "none") {
-//         img.style.display = "none";
-//         text.style.display = "block";
-//     } else {
-//         img.style.display = "block";
-//         text.style.display = "none";
-//     }
-// }
-document.addEventListener("DOMContentLoaded", function () {
-    document.getElementById("moduleModal").style.display = "none";
-
-    const modulesContainer = document.querySelector(".modules-container");
-    const moduleCards = document.querySelectorAll(".module-card");
-
-    const observer = new IntersectionObserver(
-        (entries, observer) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    modulesContainer.classList.add("show"); // Show container
-                    moduleCards.forEach((card, index) => {
-                        setTimeout(() => {
-                            card.classList.add("show"); // Show each card with delay
-                        }, index * 200);
-                    });
-                    observer.disconnect(); // Trigger only once
-                }
-            });
-        },
-        { threshold: 0.2 }
-    );
-
-    observer.observe(modulesContainer);
-
-    const canvas = document.getElementById("backgroundCanvas"); // Use existing canvas
-const ctx = canvas.getContext("2d");
-
-// Resize canvas dynamically
-function resizeCanvas() {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight; // Keep it fullscreen
-}
-resizeCanvas();
-window.addEventListener("resize", resizeCanvas);
-
-// Ball properties
-const balls = [];
-const numBalls = 80; // Keep it reasonable
-
-for (let i = 0; i < numBalls; i++) {
-    balls.push({
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
-        radius: 5, // Keep size fixed
-        dx: (Math.random() - 0.5) * 4, // Slow movement
-        dy: (Math.random() - 0.5) * 4,
-    });
-}
-
-// Animation loop
-function animate() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.fillStyle = "#ffffff"; // White balls
-
-    balls.forEach((ball) => {
-        ctx.beginPath();
-        ctx.arc(ball.x, ball.y, ball.radius, 0, Math.PI * 2);
-        ctx.fill();
-
-        // Move balls
-        ball.x += ball.dx;
-        ball.y += ball.dy;
-
-        // Bounce on edges
-        if (ball.x - ball.radius < 0 || ball.x + ball.radius > canvas.width) ball.dx *= -1;
-        if (ball.y - ball.radius < 0 || ball.y + ball.radius > canvas.height) ball.dy *= -1;
+    moduleCards.forEach(card => {
+        card.addEventListener('click', () => {
+            const module = card.dataset.module;
+            const detailsContent = document.getElementById(`details-${module}`).innerHTML;
+            
+            overlayDetailsContainer.innerHTML = detailsContent;
+            overlay.classList.add('active');
+        });
     });
 
-    requestAnimationFrame(animate);
-}
+    const closeOverlay = () => {
+        overlay.classList.remove('active');
+    };
 
-animate();
-
-const modal = document.getElementById("moduleModal");
-const modalTitle = document.getElementById("modalTitle");
-const modalDescription = document.getElementById("modalDescription");
-
-moduleCards.forEach((card) => {
-    const img = card.querySelector("img"); // This will be null now, but keeping variable names for simplicity
-    const icon = card.querySelector(".module-icon"); // Get icon element
-    const description = card.querySelector(".module-description");
-    const details = card.dataset.details; // Get detailed description from data-details attribute
-
-    card.addEventListener("mouseenter", function () {
-        // img.style.opacity = "0"; // No longer needed
-        description.style.opacity = "1"; // Show Description by changing opacity
-    });
-
-    card.addEventListener("mouseleave", function () {
-        // img.style.opacity = "1"; // No longer needed
-        description.style.opacity = "0"; // Hide Description by changing opacity
-    });
-
-    card.addEventListener("click", function () {
-        modalTitle.innerText = card.querySelector(".module-name").innerText;
-        // modalDescription.innerText = card.querySelector(".module-description").innerText + " - Detailed view with more information about this module."; // Old way
-        modalDescription.innerText = details; // Use the detailed description from data-details
-        modal.style.display = "flex";
+    closeOverlayBtn.addEventListener('click', closeOverlay);
+    overlay.addEventListener('click', (e) => {
+        if (e.target === overlay) {
+            closeOverlay();
+        }
     });
 });
-
-// Close modal when clicking outside of the modal content
-window.addEventListener("click", function (event) {
-    if (event.target === modal) {
-        closeModal();
-    }
-});
-
-// Close modal function
-window.closeModal = function () {
-    modal.style.display = "none";
-};
-});
-

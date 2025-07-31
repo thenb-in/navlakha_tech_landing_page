@@ -1,60 +1,156 @@
-<div id="modules" style="position: relative; z-index: 1; padding: 5px; padding-bottom: 5px;">
-    <canvas id="backgroundCanvas"></canvas>
-    <div>
+<section id="modules">
+    <div class="modules-wrapper">
         <h2 class="module-head">Our Modules</h2>
-    </div>
-    <div class="modules-container">
-        <div class="module-card" data-details="Manage your entire sales pipeline from lead generation to closing deals. Includes features like contact management, opportunity tracking, sales forecasting, quote generation, and performance dashboards." onclick="toggleContent(this)">
-            <div class="module-icon"><i class="fas fa-chart-line fa-3x"></i></div>
-            <div class="module-name">Sales</div>
-            <p class="module-description">Streamline your sales process, track leads, manage opportunities, and analyze performance.</p>
-        </div>
-        <div class="module-card" data-details="Gain full control over your stock with real-time tracking, multi-location warehousing, automated reordering, serial/batch number tracking, stock valuation, and comprehensive inventory reports." onclick="toggleContent(this)">
-            <div class="module-icon"><i class="fas fa-boxes fa-3x"></i></div>
-            <div class="module-name">Stock and Inventory</div>
-            <p class="module-description">Optimize inventory levels, manage stock movements, and ensure accurate warehousing.</p>
-        </div>
-        <div class="module-card" data-details="Simplify your financial operations with integrated general ledger, accounts payable/receivable, bank reconciliation, budgeting, fixed asset management, tax calculation, and automated financial reporting." onclick="toggleContent(this)">
-            <div class="module-icon"><i class="fas fa-calculator fa-3x"></i></div>
-            <div class="module-name">Accounting</div>
-            <p class="module-description">Manage finances, track expenses, automate invoicing, and generate financial reports.</p>
-        </div>
-        <div class="module-card" data-details="Ensure product and process quality with features for defining quality standards, managing inspections (incoming, in-process, final), tracking non-conformances, handling corrective/preventive actions (CAPA), and generating quality certificates." onclick="toggleContent(this)">
-            <div class="module-icon"><i class="fas fa-check-circle fa-3x"></i></div>
-            <div class="module-name">Quality Management</div>
-            <p class="module-description">Maintain quality standards, manage inspections, track compliance, and reduce defects.</p>
-        </div>
-        <div class="module-card" data-details="Build lasting customer relationships by managing leads, contacts, and accounts. Track all interactions, manage marketing campaigns, handle customer service cases, and analyze customer data for better engagement." onclick="toggleContent(this)">
-            <div class="module-icon"><i class="fas fa-users fa-3x"></i></div>
-            <div class="module-name">CRM</div>
-            <p class="module-description">Enhance customer relationships, manage interactions, track communication, and improve service.</p>
-        </div>
-        <div class="module-card" data-details="Streamline HR processes including employee database management, attendance tracking, leave management, performance appraisals, recruitment, and accurate, compliant payroll processing." onclick="toggleContent(this)">
-            <div class="module-icon"><i class="fas fa-file-invoice-dollar fa-3x"></i></div>
-            <div class="module-name">HR & Payroll</div>
-            <p class="module-description">Manage employee data, process payroll accurately, handle leave requests, and ensure compliance.</p>
-        </div>
-        <div class="module-card" data-details="Effectively manage projects from initiation to completion. Define project tasks, allocate resources, track time and expenses, manage budgets, facilitate team collaboration, and monitor project milestones." onclick="toggleContent(this)">
-            <div class="module-icon"><i class="fas fa-tasks fa-3x"></i></div>
-            <div class="module-name">Project Supervision</div>
-            <p class="module-description">Plan projects, assign tasks, track progress, manage resources, and ensure timely delivery.</p>
-        </div>
-    </div>
 
-    <!-- Add Modal Overlay Here -->
-    <div id="moduleModal">
-        <div class="modal-content">
-            <!-- Header Section -->
-            <div class="modal-header">
-                <span class="close-btn" onclick="closeModal()">&times;</span>
-                <h2 id="modalTitle"></h2>
+        <!-- Module Cards Grid -->
+        <div class="modules-container">
+            <div class="module-card" data-module="hrms">
+                <i class="fas fa-users-cog"></i>
+                <h3>HRMS & Payroll</h3>
+                <p>A comprehensive solution for managing your workforce and payroll processes efficiently.</p>
+                <div class="arrow-indicator">
+                    <i class="fas fa-arrow-right"></i>
+                </div>
             </div>
-            
-            <!-- Content Section -->
-            <div class="modal-body">
-                <p id="modalDescription"></p>
+            <div class="module-card" data-module="crm">
+                <i class="fas fa-user-friends"></i>
+                <h3>CRM</h3>
+                <p>Build and maintain strong customer relationships with our powerful CRM module.</p>
+                <div class="arrow-indicator">
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+            </div>
+            <div class="module-card" data-module="tracking">
+                <i class="fas fa-map-marked-alt"></i>
+                <h3>Call & Location Tracking</h3>
+                <p>Monitor your team's calls and locations in real-time to optimize field operations.</p>
+                <div class="arrow-indicator">
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+            </div>
+            <div class="module-card" data-module="manufacturing">
+                <i class="fas fa-industry"></i>
+                <h3>Manufacturing</h3>
+                <p>Streamline your production processes from planning to quality control.</p>
+                <div class="arrow-indicator">
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+            </div>
+            <div class="module-card" data-module="inventory">
+                <i class="fas fa-warehouse"></i>
+                <h3>Store & Inventory</h3>
+                <p>Manage your inventory and store operations with our comprehensive module.</p>
+                <div class="arrow-indicator">
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+            </div>
+            <div class="module-card" data-module="safechat">
+                <i class="fas fa-shield-alt"></i>
+                <h3>SafeChat</h3>
+                <p>Ensure secure internal communication with our end-to-end encrypted chat app.</p>
+                <div class="arrow-indicator">
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+            </div>
+            <div class="module-card" data-module="gatepass">
+                <i class="fas fa-id-card"></i>
+                <h3>Gatepass Management</h3>
+                <p>Control and monitor the entry and exit of visitors, employees, and vehicles.</p>
+                <div class="arrow-indicator">
+                    <i class="fas fa-arrow-right"></i>
+                </div>
             </div>
         </div>
     </div>
-    
+</section>
+
+<!-- Module Overlay -->
+<div class="module-overlay" id="moduleOverlay">
+    <div class="overlay-content">
+        <button class="close-overlay" id="closeOverlay">&times;</button>
+        <div id="overlayDetails">
+            <!-- Dynamic content will be injected here -->
+        </div>
+    </div>
+</div>
+
+<!-- Hidden Detailed Content -->
+<div style="display: none;">
+    <div id="details-hrms">
+        <h2>HRMS & Payroll</h2>
+        <p>Our integrated HRMS & Payroll module provides a complete solution to manage your organization's most valuable asset—its people. From recruitment to retirement, every process is streamlined for maximum efficiency. Automate payroll, manage compliance, and empower your employees with self-service tools, all within a single, unified platform.</p>
+        <ul>
+            <li><i class="fas fa-check-circle"></i> Centralized employee database with custom fields.</li>
+            <li><i class="fas fa-check-circle"></i> Automated attendance, leave, and claim processing.</li>
+            <li><i class="fas fa-check-circle"></i> Performance appraisal and goal tracking systems.</li>
+            <li><i class="fas fa-check-circle"></i> Error-free payroll processing with statutory compliance.</li>
+            <li><i class="fas fa-check-circle"></i> Employee self-service portal for payslips and tax info.</li>
+        </ul>
+    </div>
+    <div id="details-crm">
+        <h2>Customer Relationship Management (CRM)</h2>
+        <p>Transform your customer interactions with our powerful CRM. Track and manage leads, opportunities, and contacts throughout the sales pipeline. Our CRM helps you build lasting relationships by providing a 360-degree view of your customers, enabling personalized communication and exceptional service that drives loyalty and growth.</p>
+        <ul>
+            <li><i class="fas fa-check-circle"></i> End-to-end sales pipeline management.</li>
+            <li><i class="fas fa-check-circle"></i> Detailed customer history and interaction tracking.</li>
+            <li><i class="fas fa-check-circle"></i> Automated marketing campaigns and newsletters.</li>
+            <li><i class="fas fa-check-circle"></i> Quotation and sales order management.</li>
+            <li><i class="fas fa-check-circle"></i> In-depth sales analytics and performance reports.</li>
+        </ul>
+    </div>
+    <div id="details-tracking">
+        <h2>Call & Location Tracking</h2>
+        <p>Enhance the productivity and accountability of your field team with real-time call and location tracking. Our module provides managers with the tools to monitor field operations, optimize routes, and ensure that your team is performing at its best. Improve service delivery and gain valuable insights into your daily field activities.</p>
+        <ul>
+            <li><i class="fas fa-check-circle"></i> Live GPS tracking of field personnel.</li>
+            <li><i class="fas fa-check-circle"></i> Automated call logging and optional recording.</li>
+            <li><i class="fas fa-check-circle"></i> Intelligent route planning and optimization.</li>
+            <li><i class="fas fa-check-circle"></i> Geofencing and location-based alerts.</li>
+            <li><i class="fas fa-check-circle"></i> Detailed reports on travel, time, and performance.</li>
+        </ul>
+    </div>
+    <div id="details-manufacturing">
+        <h2>Manufacturing</h2>
+        <p>Our Manufacturing module is designed to streamline your entire production process, from material procurement to finished goods. Manage multi-level Bill of Materials (BOMs), plan production schedules, and track work orders in real-time. Gain complete control over your shop floor and ensure quality at every stage of manufacturing.</p>
+        <ul>
+            <li><i class="fas fa-check-circle"></i> Multi-level Bill of Materials (BOM) management.</li>
+            <li><i class="fas fa-check-circle"></i> Production planning, scheduling, and forecasting.</li>
+            <li><i class="fas fa-check-circle"></i> Real-time shop floor control and work order tracking.</li>
+            <li><i class="fas fa-check-circle"></i> Integrated quality control and assurance workflows.</li>
+            <li><i class="fas fa-check-circle"></i> Subcontracting and job work management.</li>
+        </ul>
+    </div>
+    <div id="details-inventory">
+        <h2>Store & Inventory Management</h2>
+        <p>Achieve optimal inventory levels and streamline your warehouse operations with our comprehensive Store & Inventory module. Track stock across multiple locations, manage serial and batch numbers, and automate reordering to prevent stockouts. Our system provides the visibility and control you need to run an efficient supply chain.</p>
+        <ul>
+            <li><i class="fas fa-check-circle"></i> Real-time inventory tracking and stock ledger.</li>
+            <li><i class="fas fa-check-circle"></i> Multi-warehouse and location management.</li>
+            <li><i class="fas fa-check-circle"></i> Serial number and batch tracking for traceability.</li>
+            <li><i class="fas fa-check-circle"></i> Automated reorder points and material requests.</li>
+            <li><i class="fas fa-check-circle"></i> Comprehensive inventory reports and valuation.</li>
+        </ul>
+    </div>
+    <div id="details-safechat">
+        <h2>SafeChat</h2>
+        <p>Secure your internal communications with SafeChat, our end-to-end encrypted messaging application. Designed for the modern enterprise, SafeChat ensures that your sensitive conversations and shared files remain private and protected. Collaborate with confidence in a secure environment you control.</p>
+        <ul>
+            <li><i class="fas fa-check-circle"></i> End-to-end encrypted one-to-one and group messaging.</li>
+            <li><i class="fas fa-check-circle"></i> Secure sharing of files, images, and documents.</li>
+            <li><i class="fas fa-check-circle"></i> Creation of private and public channels for team collaboration.</li>
+            <li><i class="fas fa-check-circle"></i> Available as a cloud or on-premise solution for full control.</li>
+            <li><i class="fas fa-check-circle"></i> Integration with other ERP modules for seamless workflow.</li>
+        </ul>
+    </div>
+    <div id="details-gatepass">
+        <h2>Gatepass Management</h2>
+        <p>Enhance your facility's security and streamline the entry/exit process with our Gatepass Management module. Track the movement of visitors, vehicles, and materials with a robust system that supports pre-authorization and detailed logging. Ensure a secure and well-documented flow of traffic in and out of your premises.</p>
+        <ul>
+            <li><i class="fas fa-check-circle"></i> Digital gatepass creation for visitors, vehicles, and materials.</li>
+            <li><i class="fas fa-check-circle"></i> Pre-authorization workflows for planned visits.</li>
+            <li><i class="fas fa-check-circle"></i> Integration with security checkpoints and barriers.</li>
+            <li><i class="fas fa-check-circle"></i> Detailed, searchable logs of all entry and exit activities.</li>
+            <li><i class="fas fa-check-circle"></i> Customizable gatepass templates and fields.</li>
+        </ul>
+    </div>
 </div>

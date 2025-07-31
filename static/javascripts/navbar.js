@@ -1,8 +1,11 @@
-const mobileNav = document.querySelector(".hamburger");
-const navbar = document.querySelector(".menubar");
+document.addEventListener('DOMContentLoaded', () => {
+    const hamburger = document.querySelector('.hamburger');
+    const menubar = document.querySelector('.menubar');
 
-const toggleNav = () => {
-  navbar.classList.toggle("active");
-  mobileNav.classList.toggle("hamburger-active");
-};
-mobileNav.addEventListener("click", () => toggleNav());
+    if (hamburger && menubar) {
+        hamburger.addEventListener('click', () => {
+            menubar.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        });
+    }
+});
