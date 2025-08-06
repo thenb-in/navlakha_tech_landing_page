@@ -4,12 +4,12 @@ nav {
     justify-content: space-between;
     align-items: center;
     padding: 1rem 2rem;
-    background-color: #ffffff;
-    color: #333;
+    background-color: #1a202c; /* Dark Charcoal Blue - same as modules */
+    color: #ffffff;
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .logo-img {
@@ -23,7 +23,7 @@ nav ul {
 }
 
 nav ul li a {
-    color: #333;
+    color: #ffffff;
     text-decoration: none;
     font-weight: 500;
     transition: color 0.3s ease;
@@ -37,7 +37,7 @@ nav ul li a::after {
     height: 2px;
     bottom: -5px;
     left: 0;
-    background-color: #0056b3;
+    background-color: #007bff;
     transition: width 0.3s ease;
 }
 
@@ -54,7 +54,7 @@ nav ul li a:hover::after {
 .hamburger .line {
     width: 25px;
     height: 2px;
-    background-color: #333;
+    background-color: #ffffff;
     margin: 5px 0;
     transition: all 0.3s ease;
 }
@@ -95,7 +95,7 @@ nav ul li a:hover::after {
         left: -100%;
         width: 100%;
         height: 100vh;
-        background-color: #ffffff;
+        background-color: #1a202c; /* Dark Charcoal Blue */
         padding: 1rem 0;
         transition: left 0.3s ease;
     }
@@ -117,7 +117,7 @@ nav ul li a:hover::after {
     }
 
     .menubar ul li a {
-        color: #333;
+        color: #ffffff;
         font-size: 1.5rem;
     }
 }

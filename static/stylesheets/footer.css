@@ -1,6 +1,6 @@
 /* Footer */
 .pg-footer {
-    background-color: #2d2d2d;
+    background-color: #1a202c; /* Dark Charcoal Blue - same as navbar and modules */
     color: #e0e0e0;
     position: relative;
 }
@@ -88,7 +88,7 @@
 
 .footer-copyright {
     text-align: center;
-    border-top: 1px solid #444;
+    border-top: 1px solid #4a5568; /* Dark gray border to match modules */
     padding-top: 2rem;
     margin-top: 3rem;
 }
