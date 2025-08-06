@@ -19,48 +19,18 @@
     color: #2d2d2d;
 }
 
-/* Executives Section */
-.executives {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    flex-wrap: wrap;
+/* About Content */
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
 }
 
-.executive {
-    max-width: 280px;
-    text-align: center;
-    padding: 2.5rem;
-    background-color: #f8f9fa;
-    border-radius: 8px;
-    border: 1px solid #e0e0e0;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.executive:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
-}
-
-.executive-img-placeholder {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    background-color: #e0e0e0;
-    margin: 0 auto 1.5rem auto;
-}
-
-.executive h3 {
-    font-size: 1.8rem;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-    color: #2d2d2d;
-}
-
-.executive p {
-    font-size: 1rem;
+.about-content p {
+    font-size: 1.1rem;
+    line-height: 1.7;
     color: #555;
-    line-height: 1.6;
+    margin-bottom: 1.5rem;
 }
 
 /* Why Us Points */
